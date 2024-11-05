@@ -1,0 +1,56 @@
+﻿@model Tuan7_Layout.Models.Nhasanxuat
+
+<html>
+<head>
+    @*<meta name="viewport" content="width=device-width" />
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>*@
+</head>
+<body>
+    <div class="container">
+        <h2>Xóa thông tin nhà sản xuất</h2>
+        <h3>Bạn muốn xóa nhà sản xuất này ?</h3>
+        <form method="post">
+            <div class="form-group">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            @*<th>Tên nhà sản xuất</th>
+                            <th>Địa chỉ</th>*@
+                            <th><label asp-for="Tennsx" class="form-label"></label> </th>
+                            <th><label asp-for="Diachi" class="form-label"></label> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @*@{
+                                Nhasanxuat n = ViewBag.nsx;
+                            }*@
+                            <td>
+                                <input type="hidden" name="mansx" value="@Model.Mansx" />
+                                @*<label for="Tennsx">@n.Tennsx</label>*@
+                                <label for="Tennsx">@Model.Tennsx</label>
+                            </td>
+                            <td>
+                                <label for="Diachi">@Model.Diachi</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Xóa" class="btn btn-primary" />
+            </div>
+            <br />
+            <div>
+                @*<a href="@Url.Action("index")">Quay lại</a>*@
+                <a asp-action="Index">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
